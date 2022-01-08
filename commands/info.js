@@ -24,7 +24,7 @@ exports.run = async (client, message, args) => {
       `Creator - \`Chetachi ❤️\`\nPrefix - \`${
         client.config.prefix
       }\`\nVersion - \`v${packageFile.version}\`\nCommands - \`${
-        cmdArr.length
+        cmdArr.length - 1
       }\`\nGuilds - \`${client.guilds.cache.size}\`\nChannels - \`${
         client.channels.cache.size
       }\`\nUsers - \`${

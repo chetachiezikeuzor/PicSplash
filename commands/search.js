@@ -1,4 +1,6 @@
 const Discord = require("discord.js");
+const polyfill = require("es6-promise").polyfill();
+const fetch = require("isomorphic-fetch");
 const Unsplash = require("unsplash-js").default;
 const toJson = require("unsplash-js").toJson;
 const { capitalize, bytesToSize, getImageBlob } = require("../utils/functions");
@@ -50,9 +52,6 @@ exports.run = async (client, message, args) => {
 
         return message.channel.send({ embeds: [errembed] });
       } else {
-        console.log(photos.results.length);
-        console.log(args.toString().replaceAll(",", " "));
-
         result = photos.results.slice(0, 3).map(function () {
           return this.splice(Math.floor(Math.random() * this.length), 1)[0];
         }, photos.results.slice());
@@ -63,7 +62,7 @@ exports.run = async (client, message, args) => {
           let row = new Discord.MessageActionRow().addComponents(
             new Discord.MessageButton()
               .setURL(photo.links.html)
-              .setLabel("Download")
+              .setLabel("Photo")
               .setStyle("LINK")
           );
 

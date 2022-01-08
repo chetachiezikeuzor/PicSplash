@@ -55,7 +55,7 @@ exports.run = async (client, message, args) => {
       let row = new Discord.MessageActionRow().addComponents(
         new Discord.MessageButton()
           .setURL(json.links.html)
-          .setLabel("Download")
+          .setLabel("Photo")
           .setStyle("LINK")
       );
 
