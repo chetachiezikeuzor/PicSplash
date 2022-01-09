@@ -23,17 +23,22 @@ exports.run = async (client, message, args) => {
     client.cooldownCollection.delete(message.author.id);
   }, exports.help.cooldown * 1000);
 
-  if (!args[0]) return message.reply("Please enter a message id.");
+  if (!args[0])
+    return message.reply("Please enter the nunber of messages to clear.");
   if (isNaN(args[0])) return message.reply("Please enter a real number.");
+  if (args[0] > 100)
+    return message.reply("You can't clear more than 100 messages.");
+  if (args[0] < 1)
+    return message.reply("You have to clear at least one message.");
 
-  await message.channel
-    .fetchMessage(args[0])
-    .then((message) => message.delete());
+  await message.channel.messages.fetch({ limit: args[0] }).then((messages) => {
+    message.channel.bulkDelete(messages);
+  });
 };
 
 exports.help = {
-  name: "delete",
-  description: "Delete a specific message by id.",
+  name: "clear",
+  description: "Clear a number of recent messages.",
   cooldown: "5",
-  usage: "delete <id>",
+  usage: "clear <number>",
 };
