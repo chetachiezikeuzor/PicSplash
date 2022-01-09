@@ -16,7 +16,7 @@ exports.run = async (client, message, args) => {
       name: message.author.tag,
       iconURL: message.author.avatarURL(),
     })
-    .setColor(process.env.colors.pink)
+    .setColor(process.env.color_pink)
     .setDescription(
       `Please wait ${exports.help.cooldown} seconds between commands.`
     );
@@ -47,7 +47,7 @@ exports.run = async (client, message, args) => {
             iconURL: "https://i.imgur.com/FCZNSQa.png",
           })
           .setDescription("Couldn't find Photo")
-          .setColor(process.env.colors.pink)
+          .setColor(process.env.color_pink)
           .setTimestamp();
 
         return message.channel.send({ embeds: [errembed] });
@@ -105,7 +105,7 @@ exports.run = async (client, message, args) => {
           iconURL: "https://i.imgur.com/FCZNSQa.png",
         })
         .setDescription(err)
-        .setColor(process.env.colors.pink)
+        .setColor(process.env.color_pink)
         .setTimestamp();
 
       return message.channel.send({ embeds: [embed] });

@@ -17,7 +17,7 @@ exports.run = async (client, message, args) => {
 
   let embed = new Discord.MessageEmbed()
     .setTitle("Information")
-    .setColor(process.env.colors.pink)
+    .setColor(process.env.color_pink)
     .setTimestamp()
     .setThumbnail(client.user.avatarURL())
     .setDescription(
