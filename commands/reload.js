@@ -37,7 +37,7 @@ exports.run = async (client, message, args) => {
         "https://mxpez29397.i.lithium.com/html/images/emoticons/2705.png",
     })
     .setDescription(`Reloaded **${commandName}.js**!`)
-    .setColor(process.env.color_pink)
+    .setColor(process.env.color_green)
     .setTimestamp();
 
   console.log(`[Commands] Manual reload of ${commandName}.js completed!`);
