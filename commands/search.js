@@ -39,7 +39,7 @@ exports.run = async (client, message, args) => {
         let errembed = new Discord.MessageEmbed()
           .setAuthor({
             name: "An error occured!",
-            iconURL: "https://i.imgur.com/aKbgny9.png",
+            iconURL: "https://i.imgur.com/PZ9qLe7.png",
           })
           .setDescription("Couldn't find Photo")
           .setColor(process.env.color_red)
@@ -97,7 +97,7 @@ exports.run = async (client, message, args) => {
       let embed = new Discord.MessageEmbed()
         .setAuthor({
           name: "An error occured!",
-          iconURL: "https://i.imgur.com/aKbgny9.png",
+          iconURL: "https://i.imgur.com/PZ9qLe7.png",
         })
         .setDescription(`${err}`)
         .setColor(process.env.color_red)

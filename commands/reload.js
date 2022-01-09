@@ -21,7 +21,7 @@ exports.run = async (client, message, args) => {
     let embed = new Discord.MessageEmbed()
       .setAuthor({
         name: "An error occured!",
-        iconURL: "https://i.imgur.com/aKbgny9.png",
+        iconURL: "https://i.imgur.com/PZ9qLe7.png",
       })
       .setDescription(`${e}`)
       .setColor(process.env.color_red)
@@ -33,7 +33,7 @@ exports.run = async (client, message, args) => {
   let embed = new Discord.MessageEmbed()
     .setAuthor({
       name: "Reload Successful!",
-      iconURL: "https://i.imgur.com/w7H8a8c.png",
+      iconURL: "https://i.imgur.com/r6615Ei.png",
     })
     .setDescription(`Reloaded **${commandName}.js**!`)
     .setColor(process.env.color_green)
