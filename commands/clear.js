@@ -23,7 +23,7 @@ exports.run = async (client, message, args) => {
     client.cooldownCollection.delete(message.author.id);
   }, exports.help.cooldown * 1000);
 
-  if (message.member.hasPermission("ADMINISTRATOR")) {
+  if (message.member.permissions.has("ADMINISTRATOR")) {
     let messagecount = parseInt(args[0]);
 
     if (isNaN(messagecount))
