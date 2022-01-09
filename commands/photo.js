@@ -15,7 +15,7 @@ exports.run = async (client, message, args) => {
       name: message.author.tag,
       iconURL: message.author.avatarURL(),
     })
-    .setColor(client.config.colors.pink)
+    .setColor(process.env.colors.pink)
     .setDescription(
       `Please wait ${exports.help.cooldown} seconds between commands.`
     );
@@ -31,8 +31,8 @@ exports.run = async (client, message, args) => {
   if (!args[0]) return message.reply("Please enter a photo ID.");
 
   const unsplash = new Unsplash({
-    applicationId: client.config.unsplashAccessKey,
-    secret: client.config.unsplashSecretKey,
+    applicationId: process.env.unsplashAccessKey,
+    secret: process.env.unsplashSecretKey,
   });
 
   unsplash.photos
@@ -46,7 +46,7 @@ exports.run = async (client, message, args) => {
             iconURL: "https://i.imgur.com/FCZNSQa.png",
           })
           .setDescription(json.errors.join("\n"))
-          .setColor(client.config.colors.pink)
+          .setColor(process.env.colors.pink)
           .setTimestamp();
 
         return message.channel.send({ embeds: [errembed] });
@@ -95,7 +95,7 @@ exports.run = async (client, message, args) => {
           iconURL: "https://i.imgur.com/FCZNSQa.png",
         })
         .setDescription(`${err}`)
-        .setColor(client.config.colors.pink)
+        .setColor(process.env.colors.pink)
         .setTimestamp();
 
       return message.channel.send({ embeds: [embed] });

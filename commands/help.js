@@ -7,21 +7,21 @@ exports.run = async (client, message, args) => {
         name: message.author.tag,
         iconURL: message.author.avatarURL(),
       })
-      .setColor(client.config.colors.pink)
+      .setColor(process.env.colors.pink)
       .setDescription(`I've sent the help menu to your DMs!`);
 
     let helpFirst = new Discord.MessageEmbed()
-      .setColor(client.config.colors.pink)
+      .setColor(process.env.colors.pink)
       .setTitle("About")
       .setDescription(
         `${client.user} is a discord bot that allows you to search for beautiful\nphotos from **Unsplash.com**! All photos belong to their rightful owners\nand are publicly accessible via [Unsplash](https://unsplash.com/). \n\n Chetachi ❤️`
       );
 
     let helpSecond = new Discord.MessageEmbed()
-      .setColor(client.config.colors.pink)
+      .setColor(process.env.colors.pink)
       .setTitle("Commands")
       .setDescription(
-        `Type \`${client.config.prefix}help [command]\` to get information about a command.\n\n` +
+        `Type \`${process.env.prefix}help [command]\` to get information about a command.\n\n` +
           client.commands
             .filter((cmd) => !cmd.help.dev)
             .map((cmd) => `\`${cmd.help.name}\` - ${cmd.help.description}`)
@@ -42,7 +42,7 @@ exports.run = async (client, message, args) => {
             iconURL: "https://i.imgur.com/FCZNSQa.png",
           })
           .setDescription("Could not send a DM!")
-          .setColor(client.config.colors.pink)
+          .setColor(process.env.colors.pink)
           .setTimestamp();
 
         return message.channel.send({ embeds: [error] });
@@ -55,9 +55,9 @@ exports.run = async (client, message, args) => {
 
     let embed = new Discord.MessageEmbed()
       .setTitle(`Command`)
-      .setColor(client.config.colors.pink)
+      .setColor(process.env.colors.pink)
       .setDescription(
-        `**Name:** ${props.help.name}\n**Description:** ${props.help.description}\n**Cooldown:** ${props.help.cooldown} seconds\n**Usage:** ${client.config.prefix}${props.help.usage}`
+        `**Name:** ${props.help.name}\n**Description:** ${props.help.description}\n**Cooldown:** ${props.help.cooldown} seconds\n**Usage:** ${process.env.prefix}${props.help.usage}`
       );
 
     message.channel.send({ embeds: [embed] });

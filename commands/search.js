@@ -16,7 +16,7 @@ exports.run = async (client, message, args) => {
       name: message.author.tag,
       iconURL: message.author.avatarURL(),
     })
-    .setColor(client.config.colors.pink)
+    .setColor(process.env.colors.pink)
     .setDescription(
       `Please wait ${exports.help.cooldown} seconds between commands.`
     );
@@ -32,8 +32,8 @@ exports.run = async (client, message, args) => {
   if (!args[0]) return message.reply("Please enter a keyword.");
 
   const unsplash = new Unsplash({
-    applicationId: client.config.unsplashAccessKey,
-    secret: client.config.unsplashSecretKey,
+    applicationId: process.env.unsplashAccessKey,
+    secret: process.env.unsplashSecretKey,
   });
 
   unsplash.search
@@ -47,7 +47,7 @@ exports.run = async (client, message, args) => {
             iconURL: "https://i.imgur.com/FCZNSQa.png",
           })
           .setDescription("Couldn't find Photo")
-          .setColor(client.config.colors.pink)
+          .setColor(process.env.colors.pink)
           .setTimestamp();
 
         return message.channel.send({ embeds: [errembed] });
@@ -105,7 +105,7 @@ exports.run = async (client, message, args) => {
           iconURL: "https://i.imgur.com/FCZNSQa.png",
         })
         .setDescription(err)
-        .setColor(client.config.colors.pink)
+        .setColor(process.env.colors.pink)
         .setTimestamp();
 
       return message.channel.send({ embeds: [embed] });

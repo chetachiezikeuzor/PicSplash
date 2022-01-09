@@ -24,7 +24,7 @@ exports.run = async (client, message, args) => {
         iconURL: "https://i.imgur.com/FCZNSQa.png",
       })
       .setDescription(`${e}`)
-      .setColor(client.config.colors.pink)
+      .setColor(process.env.colors.pink)
       .setTimestamp();
 
     return message.channel.send({ embeds: [embed] });
@@ -37,7 +37,7 @@ exports.run = async (client, message, args) => {
         "https://mxpez29397.i.lithium.com/html/images/emoticons/2705.png",
     })
     .setDescription(`Reloaded **${commandName}.js**!`)
-    .setColor(client.config.colors.pink)
+    .setColor(process.env.colors.pink)
     .setTimestamp();
 
   console.log(`[Commands] Manual reload of ${commandName}.js completed!`);

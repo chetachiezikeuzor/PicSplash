@@ -17,12 +17,12 @@ exports.run = async (client, message, args) => {
 
   let embed = new Discord.MessageEmbed()
     .setTitle("Information")
-    .setColor(client.config.colors.pink)
+    .setColor(process.env.colors.pink)
     .setTimestamp()
     .setThumbnail(client.user.avatarURL())
     .setDescription(
       `Creator - \`Chetachi ❤️\`\nPrefix - \`${
-        client.config.prefix
+        process.env.prefix
       }\`\nVersion - \`v${packageFile.version}\`\nCommands - \`${
         cmdArr.length - 1
       }\`\nGuilds - \`${client.guilds.cache.size}\`\nChannels - \`${

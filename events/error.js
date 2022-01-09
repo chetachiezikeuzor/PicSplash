@@ -6,7 +6,7 @@ module.exports = (client, error) => {
   let embed = new Discord.RichEmbed()
     .setAuthor("An error occured!", "https://i.imgur.com/FCZNSQa.png")
     .setDescription(error)
-    .setColor(client.config.colors.pink)
+    .setColor(process.env.colors.pink)
     .setTimestamp();
 
   return chetachi.send(embed);
