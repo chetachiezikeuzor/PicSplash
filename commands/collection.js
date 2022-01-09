@@ -39,7 +39,7 @@ exports.run = async (client, message, args) => {
         let errembed = new Discord.MessageEmbed()
           .setAuthor({
             name: "An error occured!",
-            iconURL: "https://i.imgur.com/FCZNSQa.png",
+            iconURL: "https://i.imgur.com/aKbgny9.png",
           })
           .setDescription("Couldn't find Collection")
           .setColor(process.env.color_red)
@@ -58,7 +58,7 @@ exports.run = async (client, message, args) => {
             let errembed = new Discord.MessageEmbed()
               .setAuthor({
                 name: "An error occured!",
-                iconURL: "https://i.imgur.com/FCZNSQa.png",
+                iconURL: "https://i.imgur.com/aKbgny9.png",
               })
               .setDescription(json.errors.join("\n"))
               .setColor(process.env.color_red)
@@ -103,7 +103,7 @@ exports.run = async (client, message, args) => {
       let embed = new Discord.MessageEmbed()
         .setAuthor({
           name: "An error occured!",
-          iconURL: "https://i.imgur.com/FCZNSQa.png",
+          iconURL: "https://i.imgur.com/aKbgny9.png",
         })
         .setDescription(`${err}`)
         .setColor(process.env.color_red)

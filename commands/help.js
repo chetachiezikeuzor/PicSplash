@@ -39,7 +39,7 @@ exports.run = async (client, message, args) => {
         let error = new Discord.MessageEmbed()
           .setAuthor({
             name: "An error occured!",
-            iconURL: "https://i.imgur.com/FCZNSQa.png",
+            iconURL: "https://i.imgur.com/aKbgny9.png",
           })
           .setDescription("Could not send a DM!")
           .setColor(process.env.color_pink)
