@@ -9,6 +9,9 @@
   },
   "author": "Chetachi",
   "license": "MIT",
+  "engines": {
+    "node": ">=16.6.0"
+  },
   "dependencies": {
     "discord.js": "^13.5.1",
     "dotenv": "^8.2.0",
