@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 const polyfill = require("es6-promise").polyfill();
 const fetch = require("isomorphic-fetch");
-const Unsplash = require("unsplash-js").default;
+const { UNSPLASH } = require("../utils/constants");
 const toJson = require("unsplash-js").toJson;
 const { capitalize, bytesToSize, getImageBlob } = require("../utils/functions");
 
@@ -30,12 +30,7 @@ exports.run = async (client, message, args) => {
 
   if (!args[0]) return message.reply("Please enter a photo ID.");
 
-  const unsplash = new Unsplash({
-    applicationId: process.env.unsplashAccessKey,
-    secret: process.env.unsplashSecretKey,
-  });
-
-  unsplash.photos
+  UNSPLASH.photos
     .getPhoto(args[0])
     .then(toJson)
     .then(async (json) => {

@@ -1,8 +1,8 @@
 const Discord = require("discord.js");
 const polyfill = require("es6-promise").polyfill();
 const fetch = require("isomorphic-fetch");
-const { UNSPLASH } = require("../utils/constants");
 const toJson = require("unsplash-js").toJson;
+const { UNSPLASH } = require("../utils/constants");
 const { capitalize } = require("../utils/functions");
 
 exports.run = async (client, message, args) => {
@@ -114,8 +114,8 @@ exports.run = async (client, message, args) => {
 };
 
 exports.help = {
-  name: "collection",
-  description: "Get a collection by keyword.",
+  name: "delete",
+  description: "Delete a message by id.",
   cooldown: "5",
-  usage: "collection <keyword>",
+  usage: "delete <id>",
 };
