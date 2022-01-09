@@ -101,7 +101,7 @@ exports.run = async (client, message, args) => {
           iconURL:
             "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20width%3D%221em%22%20height%3D%221em%22%20preserveAspectRatio%3D%22xMidYMid%20meet%22%20viewBox%3D%220%200%2048%2048%22%3E%3Cg%20fill%3D%22none%22%20stroke-width%3D%224%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Ccircle%20cx%3D%2224%22%20cy%3D%2224%22%20r%3D%2220%22%20fill%3D%22%232F88FF%22%20stroke%3D%22%23000%22%2F%3E%3Cpath%20d%3D%22M33%2015L15%2033M15%2015l18%2018%22%20stroke%3D%22%23fff%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E",
         })
-        .setDescription(err)
+        .setDescription(`${err}`)
         .setColor(process.env.color_red)
         .setTimestamp();
 
