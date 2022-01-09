@@ -34,4 +34,4 @@ fs.readdir("./commands//", (err, files) => {
   console.log(`[Commands] Loaded ${files.length} commands!`);
 });
 
-client.login(client.config.token);
+client.login(process.env.token);
