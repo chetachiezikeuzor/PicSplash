@@ -46,7 +46,7 @@ exports.run = async (client, message, args) => {
     }
     {
       message.channel
-        .fetchMessages({ limit: messagecount })
+        .fetch({ limit: messagecount })
         .then((messages) => message.channel.bulkDelete(messages, true));
     }
   } else {
