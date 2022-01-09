@@ -23,17 +23,37 @@ exports.run = async (client, message, args) => {
     client.cooldownCollection.delete(message.author.id);
   }, exports.help.cooldown * 1000);
 
-  if (!args[0])
-    return message.reply("Please enter the nunber of messages to clear.");
-  if (isNaN(args[0])) return message.reply("Please enter a real number.");
-  if (args[0] > 100)
-    return message.reply("You can't clear more than 100 messages.");
-  if (args[0] < 1)
-    return message.reply("You have to clear at least one message.");
+  if (message.member.hasPermission("ADMINISTRATOR")) {
+    let messagecount = parseInt(args[0]);
 
-  await message.channel.messages.fetch({ limit: args[0] }).then((messages) => {
-    message.channel.bulkDelete(messages);
-  });
+    if (isNaN(messagecount))
+      return message.channel.send(
+        ":x: " +
+          "| Please mention the amount of message that you want to delete"
+      );
+
+    if (messagecount > 100) {
+      message.channel.send(
+        ":x: " +
+          "| Error, you can only delete between 2 and 100 messages at one time !"
+      );
+    } else if (messagecount < 2) {
+      message.channel.send(
+        ":x: " +
+          "| Error, you can only delete between 2 and 100 messages at one time !"
+      );
+    } else {
+    }
+    {
+      message.channel
+        .fetchMessages({ limit: messagecount })
+        .then((messages) => message.channel.bulkDelete(messages, true));
+    }
+  } else {
+    return message.reply(
+      ":x: " + '| You need to be "ADMINISTRATOR" to do that'
+    );
+  }
 };
 
 exports.help = {
