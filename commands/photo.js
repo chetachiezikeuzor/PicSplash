@@ -46,7 +46,7 @@ exports.run = async (client, message, args) => {
             iconURL: "https://i.imgur.com/FCZNSQa.png",
           })
           .setDescription(json.errors.join("\n"))
-          .setColor(process.env.color_pink)
+          .setColor(process.env.color_red)
           .setTimestamp();
 
         return message.channel.send({ embeds: [errembed] });
@@ -95,7 +95,7 @@ exports.run = async (client, message, args) => {
           iconURL: "https://i.imgur.com/FCZNSQa.png",
         })
         .setDescription(`${err}`)
-        .setColor(process.env.color_pink)
+        .setColor(process.env.color_red)
         .setTimestamp();
 
       return message.channel.send({ embeds: [embed] });

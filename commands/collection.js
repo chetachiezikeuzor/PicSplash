@@ -16,7 +16,7 @@ exports.run = async (client, message, args) => {
       name: message.author.tag,
       iconURL: message.author.avatarURL(),
     })
-    .setColor(process.env.colors.primary)
+    .setColor(process.env.color_red)
     .setDescription(
       `Please wait ${exports.help.cooldown} seconds between commands.`
     );
@@ -47,7 +47,7 @@ exports.run = async (client, message, args) => {
             iconURL: "https://i.imgur.com/FCZNSQa.png",
           })
           .setDescription("Couldn't find Collection")
-          .setColor(process.env.colors.primary)
+          .setColor(process.env.color_red)
           .setTimestamp();
 
         return message.channel.send({ embeds: [errembed] });
@@ -66,7 +66,7 @@ exports.run = async (client, message, args) => {
                 iconURL: "https://i.imgur.com/FCZNSQa.png",
               })
               .setDescription(json.errors.join("\n"))
-              .setColor(process.env.colors.primary)
+              .setColor(process.env.color_red)
               .setTimestamp();
 
             return message.channel.send({ embeds: [errembed] });
@@ -111,7 +111,7 @@ exports.run = async (client, message, args) => {
           iconURL: "https://i.imgur.com/FCZNSQa.png",
         })
         .setDescription(`${err}`)
-        .setColor(process.env.colors.primary)
+        .setColor(process.env.color_red)
         .setTimestamp();
 
       return message.channel.send({ embeds: [embed] });
