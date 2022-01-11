@@ -50,7 +50,11 @@ module.exports = {
               .setColor(process.env.color_red)
               .setTimestamp();
 
-            return interaction.reply({ embeds: [errembed] });
+            return interaction
+              .reply({ embeds: [errembed], ephemeral: true })
+              .then((msg) => {
+                msg.delete({ timeout: 10000 });
+              });
           }
 
           let blob = await getImageBlob(json.urls.raw);
@@ -99,7 +103,11 @@ module.exports = {
             .setColor(process.env.color_red)
             .setTimestamp();
 
-          return interaction.reply({ embeds: [embed] });
+          return interaction
+            .reply({ embeds: [embed], ephemeral: true })
+            .then((msg) => {
+              msg.delete({ timeout: 10000 });
+            });
         });
     }
   },

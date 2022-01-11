@@ -69,7 +69,11 @@ module.exports = {
               .setColor(process.env.color_pink)
               .setTimestamp();
 
-            return interaction.reply({ embeds: [error] });
+            return interaction
+              .reply({ embeds: [error], ephemeral: true })
+              .then((msg) => {
+                msg.delete({ timeout: 10000 });
+              });
           });
       } else if (choice) {
         let command = client.commands.get(choice);
