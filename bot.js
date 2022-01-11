@@ -31,7 +31,7 @@ const rest = new REST({ version: "9" }).setToken(process.env.token);
         `${process.env.clientId}`,
         `${process.env.guildId}`
       ),
-      { body: commands }
+      { body: [] }
     );
 
     console.log(`[Commands] Loaded ${commands.length} commands!`);
@@ -47,6 +47,19 @@ fs.readdir("./events/", (err, files) => {
     let eventName = file.split(".")[0];
     client.on(eventName, event.bind(null, client));
   });
+});
+
+fs.readdir("./commands/", (err, files) => {
+  if (err) return console.error(err);
+  console.log("[Commands] Loading...");
+  files.forEach((file) => {
+    if (!file.endsWith(".js")) return;
+    let props = require(`./commands/${file}`);
+    console.log(`[Commands] Loaded ${file}`);
+
+    client.commands.set(props.help.name, props);
+  });
+  console.log(`[Commands] Loaded ${files.length} commands!`);
 });
 
 client.login(process.env.token);
