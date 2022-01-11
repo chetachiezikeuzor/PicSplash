@@ -20,7 +20,7 @@ module.exports = {
   usage: "keyword: <string>",
   async execute(client, interaction) {
     if (interaction) {
-      const query = interaction.options.getString("query");
+      const query = interaction.options.getString("keyword");
       if (!client.cooldownSearch) {
         client.cooldownSearch = new Set();
       }
