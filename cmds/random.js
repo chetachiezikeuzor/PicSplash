@@ -25,7 +25,7 @@ module.exports = {
         })
         .setColor(process.env.color_pink)
         .setDescription(
-          `Please wait ${exports.help.cooldown} seconds between commands.`
+          `Please wait ${exports.cooldown} seconds between commands.`
         );
 
       if (client.cooldownRandom.has(interaction.user.id))
@@ -34,7 +34,7 @@ module.exports = {
       client.cooldownRandom.add(interaction.user.id);
       setTimeout(() => {
         client.cooldownRandom.delete(interaction.user.id);
-      }, exports.help.cooldown * 1000);
+      }, exports.cooldown * 1000);
 
       UNSPLASH.photos
         .getRandomPhoto()
