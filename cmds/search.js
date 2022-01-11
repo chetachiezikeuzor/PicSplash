@@ -66,9 +66,6 @@ module.exports = {
               return this.splice(Math.floor(Math.random() * this.length), 1)[0];
             }, photos.results.slice());
 
-            let photoItems = [];
-            let rowItems = [];
-
             result.map(async (photo) => {
               let blob = await getImageBlob(photo.urls.raw);
 
@@ -103,9 +100,20 @@ module.exports = {
                 .setFooter({
                   text: query.toUpperCase(),
                 });
-              interaction.channel.send({ embeds: [photoItem] });
+              interaction.channel.send({
+                embeds: [photoItem],
+                components: [row],
+              });
             });
-            interaction.reply("nice");
+
+            interaction.reply({
+              embeds: [
+                new Discord.MessageEmbed()
+                  .setTitle(`ResultsFor: ${query}`)
+                  .setColor(process.env.color_pink)
+                  .setTimestamp(),
+              ],
+            });
           }
         })
         .catch((err) => {
