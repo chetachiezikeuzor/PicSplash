@@ -106,7 +106,7 @@ module.exports = {
               rowItems.push(row);
               photoItems.push(photoItem);
             });
-
+            interaction.reply("nice");
             interaction.channel.send("nice");
           }
         })
