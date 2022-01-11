@@ -48,7 +48,7 @@ module.exports = {
       UNSPLASH.search
         .photos(query, 0)
         .then(toJson)
-        .then(async (photos) => {
+        .then((photos) => {
           if (photos.total <= 0) {
             let errembed = new Discord.MessageEmbed()
               .setAuthor({
@@ -108,7 +108,7 @@ module.exports = {
               photoItems.push(photoItem);
             });
 
-            await interaction.reply({
+            interaction.reply({
               embeds: photoItems,
               components: rows,
             });
