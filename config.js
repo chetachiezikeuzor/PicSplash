@@ -1,7 +1,7 @@
 exports.content = {
   token: process.env.TOKEN,
   prefix: "/",
-  activityMessage: "beautiful photos. | p!help",
+  activityMessage: "beautiful photos. | /help",
   activityType: "SEARCHING",
   unsplashAccessKey: process.env.accessKey,
   unsplashSecretKey: process.env.secretKey,
