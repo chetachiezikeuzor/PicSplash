@@ -106,7 +106,7 @@ module.exports = {
               });
             });
 
-            interaction.reply(`Here are the for: ${query}`);
+            interaction.reply(`Here are the results for: "${query}"`);
           }
         })
         .catch((err) => {
