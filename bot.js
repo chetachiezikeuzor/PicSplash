@@ -19,7 +19,6 @@ for (const file of commandFiles) {
   const command = require(`./cmds/${file}`);
   commands.push(command.data.toJSON());
   console.log(`[Commands] Loaded ${command.data.name}`);
-  client.commands.set(command.data.name, command);
 }
 
 const rest = new REST({ version: "9" }).setToken(process.env.token);
