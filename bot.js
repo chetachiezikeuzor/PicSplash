@@ -3,7 +3,6 @@ const fs = require("fs");
 const { REST } = require("@discordjs/rest");
 const { Routes } = require("discord-api-types/v9");
 const Discord = require("discord.js");
-const userSchema = require("./models/user");
 const { Client, Intents } = require("discord.js");
 const commands = [];
 const commandFiles = fs
