@@ -17,7 +17,7 @@ module.exports = {
         .setRequired(true)
     ),
   cooldown: "5",
-  usage: "search: <query>",
+  usage: "query: <string>",
   async execute(client, interaction) {
     if (interaction) {
       const query = interaction.options.getString("query");

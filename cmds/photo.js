@@ -17,7 +17,7 @@ module.exports = {
         .setRequired(true)
     ),
   cooldown: "5",
-  usage: "photo: <id>",
+  usage: "id: <string>",
   async execute(client, interaction) {
     if (interaction) {
       const photoID = interaction.options.getString("id");

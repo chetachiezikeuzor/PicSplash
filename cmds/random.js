@@ -11,7 +11,7 @@ module.exports = {
     .setName("random")
     .setDescription("Reload a command."),
   cooldown: "5",
-  usage: "random",
+  usage: "",
   async execute(client, interaction) {
     if (interaction) {
       if (!client.cooldownRandom) {
