@@ -65,9 +65,6 @@ module.exports = {
               return this.splice(Math.floor(Math.random() * this.length), 1)[0];
             }, photos.results.slice());
 
-            let rowItems = [];
-            let photoItems = [];
-
             result.map(async (photo) => {
               let blob = await getImageBlob(photo.urls.raw);
 
@@ -103,13 +100,10 @@ module.exports = {
                   text: query.toUpperCase(),
                 });
 
-              photoItems.push(photoItem);
-              rowItems.push(row);
-            });
-
-            interaction.reply({
-              embeds: photoItems,
-              components: rowItems,
+              interaction.send({
+                embeds: photoItem,
+                components: row,
+              });
             });
           }
         })
