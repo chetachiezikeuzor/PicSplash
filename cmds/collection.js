@@ -59,11 +59,7 @@ module.exports = {
               .setColor(process.env.color_red)
               .setTimestamp();
 
-            return interaction
-              .reply({ embeds: [errembed], ephemeral: true })
-              .then((msg) => {
-                msg.delete({ timeout: 10000 });
-              });
+            return interaction.reply({ embeds: [errembed], ephemeral: true });
           } else {
             result = photos.results.slice(0, 3).map(function () {
               return this.splice(Math.floor(Math.random() * this.length), 1)[0];
@@ -121,11 +117,7 @@ module.exports = {
             .setColor(process.env.color_red)
             .setTimestamp();
 
-          return interaction
-            .reply({ embeds: [embed], ephemeral: true })
-            .then((msg) => {
-              msg.delete({ timeout: 10000 });
-            });
+          return interaction.reply({ embeds: [embed], ephemeral: true });
         });
     }
   },
