@@ -65,6 +65,9 @@ module.exports = {
               return this.splice(Math.floor(Math.random() * this.length), 1)[0];
             }, photos.results.slice());
 
+            let photoItems = [];
+            let rows = [];
+
             result.map(async (photo) => {
               let blob = await getImageBlob(photo.urls.raw);
 
@@ -75,7 +78,9 @@ module.exports = {
                   .setStyle("LINK")
               );
 
-              photoItem = new Discord.MessageEmbed()
+              rows.push(row);
+
+              let photoItem = new Discord.MessageEmbed()
                 .setAuthor({
                   name: `${photo.user.name} (@${photo.user.username}) on Unsplash`,
                   iconURL: photo.user.profile_image.medium,
@@ -100,10 +105,12 @@ module.exports = {
                   text: query.toUpperCase(),
                 });
 
-              return interaction.reply({
-                embeds: [photoItem],
-                components: [row],
-              });
+              photoItems.push(photoItem);
+            });
+
+            await interaction.reply({
+              embeds: photoItems,
+              components: rows,
             });
           }
         })
