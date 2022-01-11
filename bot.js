@@ -31,7 +31,7 @@ const rest = new REST({ version: "9" }).setToken(process.env.token);
         `${process.env.clientId}`,
         `${process.env.guildId}`
       ),
-      { body: [commands] }
+      { body: commands }
     );
 
     console.log(`[Commands] Loaded ${commands.length} commands!`);
@@ -58,6 +58,9 @@ fs.readdir("./command/", (err, files) => {
     console.log(`[Commands] Loaded ${file}`);
 
     client.commands.set("", "");
+
+    //const command = client.application?.commands.fetch('123456789012345678');
+    //await command.delete();
   });
   console.log(`[Commands] Loaded ${files.length} commands!`);
 });
