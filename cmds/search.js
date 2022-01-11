@@ -107,7 +107,7 @@ module.exports = {
               rowItems.push(row);
             });
 
-            interaction.channel.send({
+            interaction.reply({
               embeds: photoItems,
               components: rowItems,
             });
