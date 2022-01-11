@@ -100,7 +100,7 @@ module.exports = {
                   text: query.toUpperCase(),
                 });
 
-              interaction.send({
+              interaction.channel.send({
                 embeds: photoItem,
                 components: row,
               });
