@@ -103,11 +103,9 @@ module.exports = {
                 .setFooter({
                   text: query.toUpperCase(),
                 });
-              rowItems.push(row);
-              photoItems.push(photoItem);
+              interaction.channel.send({ embeds: [photoItem] });
             });
             interaction.reply("nice");
-            interaction.channel.send("nice");
           }
         })
         .catch((err) => {
