@@ -65,9 +65,6 @@ module.exports = {
               return this.splice(Math.floor(Math.random() * this.length), 1)[0];
             }, photos.results.slice());
 
-            let photoItems = [];
-            let rows = [];
-
             result.map(async (photo) => {
               let blob = await getImageBlob(photo.urls.raw);
 
@@ -77,8 +74,6 @@ module.exports = {
                   .setLabel("Photo")
                   .setStyle("LINK")
               );
-
-              rows.push(row);
 
               let photoItem = new Discord.MessageEmbed()
                 .setAuthor({
@@ -105,12 +100,10 @@ module.exports = {
                   text: query.toUpperCase(),
                 });
 
-              photoItems.push(photoItem);
-            });
-
-            interaction.reply({
-              embeds: photoItems,
-              components: rows,
+              interaction.reply({
+                embeds: photoItem,
+                components: row,
+              });
             });
           }
         })
