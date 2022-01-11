@@ -57,9 +57,7 @@ fs.readdir("./command/", (err, files) => {
     let props = require(`./command/${file}`);
     console.log(`[Commands] Loaded ${file}`);
 
-    client.application.commands.cache
-      .find((c) => c.name === `${props.data.name}`)
-      .delete();
+    client.commands.cache.find((c) => c.name === `${props.data.name}`).delete();
   });
   console.log(`[Commands] Loaded ${files.length} commands!`);
 });
