@@ -49,17 +49,4 @@ fs.readdir("./events/", (err, files) => {
   });
 });
 
-fs.readdir("./commands/", (err, files) => {
-  if (err) return console.error(err);
-  console.log("[Commands] Loading...");
-  files.forEach((file) => {
-    if (!file.endsWith(".js")) return;
-    let props = require(`./commands/${file}`);
-    console.log(`[Commands] Loaded ${file}`);
-
-    client.commands.set(props.help.name, props);
-  });
-  console.log(`[Commands] Loaded ${files.length} commands!`);
-});
-
 client.login(process.env.token);
