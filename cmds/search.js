@@ -44,7 +44,11 @@ module.exports = {
         client.cooldownSearch.delete(interaction.user.id);
       }, exports.cooldown * 1000);
 
-      if (!query) return interaction.reply("Please enter a query.");
+      if (!query)
+        return interaction.reply({
+          content: "Please enter a query.",
+          ephemeral: true,
+        });
 
       UNSPLASH.search
         .photos(query, 0)
