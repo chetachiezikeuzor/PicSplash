@@ -29,7 +29,7 @@ const rest = new REST({ version: "9" }).setToken(process.env.token);
         `${process.env.clientId}`,
         `${process.env.guildId}`
       ),
-      { body: [] }
+      { body: commands }
     );
 
     console.log(`[Commands] Loaded ${commands.length} commands!`);
