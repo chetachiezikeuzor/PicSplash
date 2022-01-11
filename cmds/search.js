@@ -48,7 +48,7 @@ module.exports = {
       UNSPLASH.search
         .photos(query, 0)
         .then(toJson)
-        .then((photos) => {
+        .then(async (photos) => {
           if (photos.total <= 0) {
             let errembed = new Discord.MessageEmbed()
               .setAuthor({
