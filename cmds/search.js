@@ -106,14 +106,7 @@ module.exports = {
               });
             });
 
-            interaction.reply({
-              embeds: [
-                new Discord.MessageEmbed()
-                  .setTitle(`ResultsFor: ${query}`)
-                  .setColor(process.env.color_pink)
-                  .setTimestamp(),
-              ],
-            });
+            interaction.reply(`Here are the for: ${query}`);
           }
         })
         .catch((err) => {
