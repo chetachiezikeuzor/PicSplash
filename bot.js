@@ -12,7 +12,6 @@ const config = require("./config.js");
 const client = new Client({ intents: [Intents.FLAGS.GUILDS] });
 
 client.config = config.content;
-client.commands = new Discord.Collection();
 
 for (const file of commandFiles) {
   console.log("[Commands] Loading...");
