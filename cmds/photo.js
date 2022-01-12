@@ -9,7 +9,7 @@ const { capitalize, bytesToSize, getImageBlob } = require("../utils/functions");
 module.exports = {
   data: new SlashCommandBuilder()
     .setName("photo")
-    .setDescription("Gets a specific photo.")
+    .setDescription("Gets a specific photo by id.")
     .addStringOption((option) =>
       option
         .setName("id")

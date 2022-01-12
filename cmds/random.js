@@ -9,7 +9,7 @@ const { capitalize, bytesToSize, getImageBlob } = require("../utils/functions");
 module.exports = {
   data: new SlashCommandBuilder()
     .setName("random")
-    .setDescription("Reload a command."),
+    .setDescription("Gets a random photo."),
   cooldown: "5",
   usage: "",
   async execute(client, interaction) {
